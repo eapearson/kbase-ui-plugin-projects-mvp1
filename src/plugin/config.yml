@@ -1,0 +1,17 @@
+## Config for plugin
+---
+package:
+  author: Erik Pearson
+  name: projects-mvp1
+source:
+install:
+  widgets: 
+    -
+      module: panel
+      id: eap_projects-mvp1_panel
+      type: es6
+  routes:
+    -
+      path: [projects-mvp1]
+      widget: eap_projects-mvp1_panel
+      authorization: true
