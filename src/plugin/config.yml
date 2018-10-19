@@ -7,11 +7,25 @@ source:
 install:
   widgets: 
     -
-      module: panel
-      id: eap_projects-mvp1_panel
+      module: projectsView
+      id: eap_projects-mvp1_projectsView
+      type: es6
+    -
+      module: projectView
+      id: eap_projects-mvp1_projectView
       type: es6
   routes:
     -
       path: [projects-mvp1]
-      widget: eap_projects-mvp1_panel
+      widget: eap_projects-mvp1_projectsView
       authorization: true
+    -
+      path: [projects-mvp1, {type: 'param', name: 'projectId'}]
+      widget: eap_projects-mvp1_projectView
+      authorization: true
+  menu:
+    -
+      name: projects-mvp1
+      path: [projects-mvp1]
+      label: Projects 
+      icon: folder-o
