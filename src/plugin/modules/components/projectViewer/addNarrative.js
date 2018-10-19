@@ -81,7 +81,6 @@ define([
                     this.status('error');
                     this.error(err);
                 });
-            // console.log('will add selected narrative', this.selectedNarrative());
         }
     }
 

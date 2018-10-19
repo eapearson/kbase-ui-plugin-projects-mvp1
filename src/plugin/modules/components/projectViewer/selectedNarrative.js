@@ -14,13 +14,10 @@ define([
     class ViewModel {
         constructor({narrative}) {
             this.narrative = narrative;
-
-            console.log('narrative???', narrative());
         }
     }
 
     const t = html.tag,
-        div = t('div'),
         table = t('table'),
         tr = t('tr'),
         th = t('th'),

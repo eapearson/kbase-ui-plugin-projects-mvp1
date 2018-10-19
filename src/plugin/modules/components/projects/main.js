@@ -2,6 +2,7 @@
 'use strict';
 define([
     'knockout',
+    'marked',
     'kb_knockout/registry',
     'kb_knockout/lib/generators',
     'kb_knockout/components/overlayPanel',
@@ -11,6 +12,7 @@ define([
     '../../lib/model'
 ], function (
     ko,
+    marked,
     reg,
     gen,
     OverlayPanelComponent,
@@ -59,8 +61,6 @@ define([
 
     const t = html.tag,
         p = t('p'),
-        button = t('button'),
-        h2 = t('h2'),
         h3 = t('h3'),
         h4 = t('h4'),
         div = t('div');
@@ -68,7 +68,7 @@ define([
     const style = html.makeStyles({
         component: {
             css: {
-                margin: '10px',
+                // margin: '10px',
                 flex: '1 1 0px',
                 display: 'flex',
                 flexDirection: 'column'
@@ -84,7 +84,7 @@ define([
         },
         row: {
             css: {
-                margin: '10px',
+                margin: '0 10px',
                 flex: '1 1 0px',
                 display: 'flex',
                 flexDirection: 'row'
@@ -93,13 +93,13 @@ define([
         col1: {
             css: {
                 flex: '1 1 0px',
-                padding: '4px'
+                margin: '0 5px'
             }
         },
         col2: {
             css: {
                 flex: '2 1 0px',
-                padding: '4px'
+                margin: '0 5px'
             }
         }
     });
@@ -152,21 +152,20 @@ define([
                 class: style.classes.col1
             }, [
                 h4('Projects'),
-                p([
-                    'Organize your work with Projects!'
-                ]),
-                p([
-                    'With projects you can organize your Narratives into collections. ',
-                    'From a Project, you can sort and search a convenient subset of your Narratives.'
-                ]),
-                p('What are Projects useful for?'),
-                p('Organize your favorite Narratives'),
-                p('Support a work project with by collecting all relevant narratives together'),
-                p('Show off your public narratives by creating a public folder with public narratives')
+                marked(`
+Organize your work with Projects!
+
+With projects you can organize your Narratives into collections.
+From a Project, you can sort and search a convenient subset of your Narratives.
+
+What are Projects useful for?
+- Organize your favorite Narratives
+- Support a work project with by collecting all relevant narratives together
+- Show off your public narratives by creating a public folder with public narratives
+                `)
             ])
         ]);
     }
-
 
     function buildNewProject() {
         return div({

@@ -82,8 +82,6 @@ define([
                 column.rowStyle.flexBasis = width;
             });
 
-            console.log('columns', this.table.columns);
-
             this.sortColumn = ko.observable('timestamp');
 
             this.sortDirection = ko.observable('descending');
@@ -141,8 +139,6 @@ define([
             const column = this.table.sort.column();
             const c = column.name;
             const dir = this.table.sort.direction() === 'asc' ? 1 : -1;
-            // console.log('sorting?', c, dir, a, b);
-            // const sortComparator = this.columnMap[c].sort;
             if (typeof column.sort === 'object') {
                 return dir * this.table.columnMap[c].sort.comparator(a.data[c].value, b.data[c].value);
             } else {

@@ -22,30 +22,7 @@ define([
 
             this.model = new Model({runtime});
 
-            // this.name = null;
-            // this.id = null;
-            // this.slug = null;
-            // this.shortDescription = null;
-            // this.description = null;
-            // this.owner = null;
-            // this.created = null;
-            // this.lastUpdated = null;
-
             this.ready = ko.observable(true);
-
-            // this.model.getProject(projectId)
-            //     .then((project) => {
-            //         this.name = project.name;
-            //         this.id = project.id;
-            //         this.slug = project.slug;
-            //         this.shortDescription = project.shortDescription;
-            //         this.description = project.description;
-            //         this.owner = project.owner;
-            //         this.created = project.created;
-            //         this.lastUpdated = project.lastUpdated;
-
-            //         this.ready(true);
-            //     });
         }
     }
 
@@ -60,7 +37,7 @@ define([
                 flex: '1 1 0px',
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '10px'
+                // padding: '10px'
             }
         },
         row: {

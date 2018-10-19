@@ -7,8 +7,6 @@ define([
     'kb_lib/html',
     'kb_lib/htmlBuilders',
     '../../lib/model',
-    '../table/main',
-    '../table/types',
     '../fields/projectLink',
     './userLink',
     './addNarrative'
@@ -19,8 +17,6 @@ define([
     html,
     build,
     {Model},
-    TableComponent,
-    {Table, Column, Row},
     ProjectLinkComponent,
     UserLinkComponent,
     AddNarrativeComponent
@@ -47,7 +43,6 @@ define([
                     this.model.addProjectNarrative(this.projectId, narrativeId);
                     return this.model.getNarrative2(narrativeId)
                         .then((narrative) => {
-                            console.log('new narrative?', narrative);
                             this.narratives.push(narrative);
                         });
                 }
@@ -105,7 +100,7 @@ define([
                 flex: '0 0 auto',
                 display: 'flex',
                 flexDirection: 'column',
-                margin: '4px',
+                margin: '0 0 10px 0',
                 border: '2px rgba(150, 150, 150, 0.5) solid',
                 padding: '4px'
             }

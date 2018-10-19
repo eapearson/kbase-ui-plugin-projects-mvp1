@@ -7,10 +7,7 @@ define([
     'kb_lib/html',
     'kb_lib/htmlBuilders',
     '../../lib/model',
-    '../table/main',
-    '../table/types',
-    '../fields/projectLink',
-    '../fields/userLink'
+    '../fields/projectLink'
 ], function (
     ko,
     reg,
@@ -18,10 +15,7 @@ define([
     html,
     build,
     {Model},
-    TableComponent,
-    {Table, Column, Row},
     ProjectLinkComponent,
-    UserLinkComponent
 ) {
     class ViewModel {
         constructor({runtime, showNewProjectForm}) {
@@ -31,7 +25,6 @@ define([
             this.showNewProjectForm = showNewProjectForm;
 
             this.projects = ko.observableArray();
-
             this.ready = ko.observable(false);
 
             this.loadProjects();
@@ -41,7 +34,6 @@ define([
             this.ready(false);
             this.model.getMyProjects()
                 .then((projects) => {
-                    console.log('proj', projects);
                     this.projects.removeAll();
                     this.projects(projects);
                     this.ready(true);
@@ -73,7 +65,6 @@ define([
     // VIEW
 
     const t = html.tag,
-        a = t('a'),
         span = t('span'),
         div = t('div'),
         table = t('table'),
@@ -223,7 +214,6 @@ define([
         }, buildNarrative());
     }
 
-
     function buildToolbar() {
         return div({
             class: 'btn-toolbar',
@@ -263,20 +253,6 @@ define([
             ])
         ]);
     }
-
-    // function buildProjectsTable() {
-    //     return div({
-    //         dataBind: {
-    //             component: {
-    //                 name: TableComponent.quotedName(),
-    //                 params: {
-    //                     table: 'projectsTable',
-    //                     messages: 'messages'
-    //                 }
-    //             }
-    //         }
-    //     });
-    // }
 
     function buildNoProjects() {
         return div({

@@ -46,7 +46,7 @@ define([
                 flex: '1 1 0px',
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '10px'
+                // padding: '10px'
             }
         },
         row: {
@@ -61,7 +61,8 @@ define([
                 flex: '1 1 0px',
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '10px'
+                margin: '0 5px',
+                // padding: '10px'
             }
         },
         project: {

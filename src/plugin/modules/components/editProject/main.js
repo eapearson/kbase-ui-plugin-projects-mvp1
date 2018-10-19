@@ -74,7 +74,7 @@ define([
                 flex: '1 1 0px',
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '10px'
+                // padding: '10px'
             }
         },
         row: {
@@ -89,7 +89,7 @@ define([
                 flex: '1 1 0px',
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '10px'
+                margin: '0 5px'
             }
         },
         project: {
@@ -163,13 +163,21 @@ define([
             div({
                 class: style.classes.col1
             }, [
-                h3('Project Editor'),
+                h3({
+                    style: {
+                        margin: '0px'
+                    }
+                }, 'Project Editor'),
                 buildProjectEditor()
             ]),
             div({
                 class: style.classes.col1
             }, [
-                h3('Preview'),
+                h3({
+                    style: {
+                        margin: '0px'
+                    }
+                }, 'Preview'),
                 buildProjectView()
             ])
         ]);

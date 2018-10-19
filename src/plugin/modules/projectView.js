@@ -43,6 +43,7 @@ define([
             this.container.style.flex = '1 1 0px';
             this.container.style.display = 'flex';
             this.container.style.flexDirection = 'column';
+            this.container.style.margin = '0 10px';
         }
 
         start({projectId}) {

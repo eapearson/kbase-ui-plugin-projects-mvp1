@@ -75,7 +75,8 @@ define([
                 flexDirection: 'column',
                 padding: '10px',
                 border: '1px rgba(150, 150, 150, 1) solid',
-                borderRadius: '4px'
+                borderRadius: '4px',
+                marginBottom: '20px'
             }
         },
         field: {
@@ -95,7 +96,9 @@ define([
         },
         contentCol: {
             css: {
-                flex: '1 1 0px'
+                flex: '1 1 0px',
+                display: 'flex',
+                flexDirection: 'column'
             }
         },
         description: {
@@ -109,9 +112,6 @@ define([
     function buildProjectTable() {
         return div({
             class: style.classes.table,
-            style: {
-                marginTop: '20px'
-            },
             dataBind: {
                 with: 'project'
             }
@@ -172,9 +172,6 @@ define([
     function buildProjectStat() {
         return div({
             class: style.classes.table,
-            style: {
-                marginTop: '20px'
-            },
             dataBind: {
                 with: 'project'
             }
@@ -216,7 +213,10 @@ define([
 
     function buildToolbar() {
         return div({
-            class: 'btn-toolbar'
+            class: 'btn-toolbar',
+            style: {
+                marginBottom: '10px'
+            }
         }, [
             div({
                 class: 'btn-group pull-right'

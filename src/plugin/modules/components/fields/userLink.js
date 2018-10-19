@@ -11,7 +11,6 @@ define([
 
     class ViewModel {
         constructor({field}) {
-            console.log('field', field);
             this.username = field.value;
         }
     }
