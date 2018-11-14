@@ -14,13 +14,13 @@ define([
     gen,
     html,
     build,
-    {Model},
-    ProjectLinkComponent,
+    { Model },
+    ProjectLinkComponent
 ) {
     class ViewModel {
-        constructor({runtime, showNewProjectForm}) {
+        constructor({ runtime, showNewProjectForm }) {
             this.runtime = runtime;
-            this.model = new Model({runtime});
+            this.model = new Model({ runtime });
 
             this.showNewProjectForm = showNewProjectForm;
 
@@ -41,7 +41,7 @@ define([
         }
 
         doResetFakeData() {
-            const model = new Model({runtime: this.runtime});
+            const model = new Model({ runtime: this.runtime });
             model.recreateFakeData();
             this.loadProjects();
         }
@@ -51,7 +51,7 @@ define([
         }
 
         doDeleteProject(project) {
-            const model = new Model({runtime: this.runtime});
+            const model = new Model({ runtime: this.runtime });
             model.deleteProject(project.id)
                 .then(() => {
                     this.projects.remove(project);

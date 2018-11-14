@@ -16,15 +16,15 @@ define([
     gen,
     html,
     build,
-    {Model},
+    { Model },
     ProjectLinkComponent,
     UserLinkComponent,
     AddNarrativeComponent
 ) {
     class ViewModel {
-        constructor({runtime, projectId, actions}, {showOverlay}) {
+        constructor({ runtime, projectId }, { showOverlay }) {
             this.runtime = runtime;
-            this.model = new Model({runtime});
+            this.model = new Model({ runtime });
             this.projectId = projectId;
 
             this.narratives = ko.observableArray();
